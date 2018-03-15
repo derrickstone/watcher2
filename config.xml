@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<configuration>
+	<system>
+		<setting name="defaultUserAgent">Watcher2</setting>
+		<setting name="defaultTimeout">30</setting>
+		<setting name="pollInterval">20.0</setting>
+		<setting name="defaultAlertRecipient">webcenter</setting>
+		<setting name="dbhost">localhost</setting>
+		<setting name="dbusername">watcher</setting>
+		<setting name="dbpassword">nopeeking</setting>
+		<setting name="dbname">watcher</setting>
+	</system>
+	<threads>
+		<!--<resource name="">
+			<url></url>
+			<timeout></timeout>
+			<goodText></goodText>
+			<badText></badText>
+			<errorCountTrigger>
+			</errorCountTrigger>
+			<userAgent>
+			</userAgent>
+		</resource>-->
+		<resource name="HS Home">
+			<property name="url">http://www.healthsystem.virginia.edu/isalive.cfm</property>
+			<property name="timeout">10</property>
+			<property name="goodText">I AM xxALIVE</property>
+			<property name="badText">error</property>
+			<property name="errorCountTrigger">2</property>
+			<property name="userAgent"></property>
+			<property name="notificationGroup">webcenter</property>
+		</resource>
+		<resource name="MC Home">
+			<property name="url">http://www.medicalcenter.virginia.edu/site-status</property>
+			<property name="timeout">10</property>
+			<property name="goodText">isAlive</property>
+			<property name="badText">error</property>
+			<property name="errorCountTrigger">2</property>
+			<property name="userAgent"></property>
+			<property name="notificationGroup">webcenter</property>
+		</resource>
+	</threads>
+	<recipients>
+		<!-- <group name="">
+			<recipient name="">
+			</recipient>
+		</group> -->
+		<group name="webcenter">
+			<recipient name="Derrick Phone">4347604912@messaging.sprintpcs.com</recipient>
+			<recipient name="Derrick Email">djs6d@hscmail.mcc.virginia.edu</recipient>
+		</group>
+	</recipients>
+</configuration>
